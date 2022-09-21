@@ -8,10 +8,18 @@ namespace MoodAnalyzerProblem
 {
     public class AnalyzeMood
     {
-        //method to analyze mood
-        public string Mood(string message)
+        public string message;
+        public AnalyzeMood(string message)
         {
+            this.message = message; 
+        }
+
+        //method to analyze mood
+        public string Mood()
+        {
+
             //convert the message to lower case and then check it contains happy or sad
+           
             if (message.ToLower().Contains("happy"))
             {
                 return "happy";
