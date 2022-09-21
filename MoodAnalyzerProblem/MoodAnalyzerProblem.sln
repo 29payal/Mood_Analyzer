@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32819.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoodAnalyzerProblem", "MoodAnalyzerProblem.csproj", "{935F79B8-9D02-4120-B4E0-919B319061CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest1", "..\UnitTest1\UnitTest1.csproj", "{3A370CF8-A35F-48FC-9725-6AF3038F386D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{935F79B8-9D02-4120-B4E0-919B319061CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{935F79B8-9D02-4120-B4E0-919B319061CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{935F79B8-9D02-4120-B4E0-919B319061CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{935F79B8-9D02-4120-B4E0-919B319061CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A370CF8-A35F-48FC-9725-6AF3038F386D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A370CF8-A35F-48FC-9725-6AF3038F386D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A370CF8-A35F-48FC-9725-6AF3038F386D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A370CF8-A35F-48FC-9725-6AF3038F386D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {034CA876-71A9-491D-9A6E-E510D3ED4A55}
+	EndGlobalSection
+EndGlobal
