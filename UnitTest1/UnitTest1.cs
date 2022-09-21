@@ -11,12 +11,16 @@ namespace UnitTest1
         
         public void GivenMsgReturnHappyOrSad()
         {
-            //given the return message the mood is happy or sad
+
+            //UC1- given the return message the mood is happy or sad
             AnalyzeMood analyzeMood = new AnalyzeMood();
+
             string message = "I am in happy mood";
             string expected = "happy";
+
             var actual = analyzeMood.Mood(message);
             Assert.AreEqual(expected, actual);
+
             Console.WriteLine(actual);
 
         }
