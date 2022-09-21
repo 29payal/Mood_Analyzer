@@ -30,5 +30,16 @@ namespace UnitTest1
             Assert.AreEqual(expected,actual);
             Console.WriteLine(actual);
         }
+        [TestMethod]
+        public void GivenMsgReturnHappy()
+        {
+            //TC1.2- given the return message happy
+            AnalyzeMood analyzeMood = new AnalyzeMood();
+            string message = "I am in Happy Mood";
+            string expected = "happy";
+            var actual = analyzeMood.Mood(message);
+            Assert.AreEqual(expected, actual);
+            Console.WriteLine(actual);
+        }
     }
 }
