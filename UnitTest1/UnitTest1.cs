@@ -8,25 +8,52 @@ namespace UnitTest1
     public class UnitTest1
     {
         [TestMethod]
-        
         public void GivenMsgReturnSad()
         {
-            //Refactor
+            //UC1
             //TC1.1- given the return message sad
-            AnalyzeMood analyzeMood = new AnalyzeMood("I am in sad mood ");
+
+            //Arrange
+            string message = "I am in sad mood";
             string expected = "sad";
+            //Act
+            AnalyzeMood analyzeMood = new AnalyzeMood(message);
             var actual = analyzeMood.Mood();
+            //Assert
             Assert.AreEqual(expected, actual);
             Console.WriteLine(actual);
         }
+
         [TestMethod]
         public void GivenMsgReturnHappy()
         {
             //TC1.2- given the return message happy
-            AnalyzeMood analysisMood = new AnalyzeMood("I am in happy mood");
+
+            //Arrange
+            string message = "I am in happy mood ";
             string expected = "happy";
-            var actual = analysisMood.Mood();
+            //Act
+            AnalyzeMood analyzeMood = new AnalyzeMood(message);
+            var actual = analyzeMood.Mood();
+            //Assert
             Assert.AreEqual(expected,actual);
+            Console.WriteLine(actual);
+        }
+
+        [TestMethod]
+        public void GivenNullMoodReturnHappy()
+        {
+            //UC2
+            //TC2.1 - given null mood then return happy message
+        
+            //Arrange
+            string message = null; 
+            string expected = "happy";
+            //Act
+            AnalyzeMood analyzeMood = new AnalyzeMood(message);
+            var actual = analyzeMood.Mood();
+            //Assert
+            Assert.AreEqual(expected, actual);
             Console.WriteLine(actual);
         }
     }

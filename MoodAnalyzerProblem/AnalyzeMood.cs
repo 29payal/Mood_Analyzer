@@ -9,24 +9,33 @@ namespace MoodAnalyzerProblem
     public class AnalyzeMood
     {
         public string message;
+
         public AnalyzeMood(string message)
         {
             this.message = message; 
         }
 
-        //method to analyze mood
         public string Mood()
         {
-
-            //convert the message to lower case and then check it contains happy or sad
-           
-            if (message.ToLower().Contains("happy"))
+            try
             {
-                return "happy";
+                message=message.ToLower();
+                if (message.Contains("happy"))
+                {
+                    return "happy";
+                }
+                else
+                {
+                    return "sad";
+                }
             }
-            else
+
+            //catch block will catch the exception 
+            catch(NullReferenceException e)
             {
-                return "sad";
+                //print the default exception message
+                Console.WriteLine(e);
+                return "happy";
             }
         }
     }
