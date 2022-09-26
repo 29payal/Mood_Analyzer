@@ -8,8 +8,10 @@ namespace MoodAnalyzerProblem
 {
     public class AnalyzeMood
     {
+        //method to analyse the mood
         public string message;
 
+        //created parameterized constructor
         public AnalyzeMood(string message)
         {
             this.message = message; 
@@ -19,24 +21,30 @@ namespace MoodAnalyzerProblem
         {
             try
             {
-                message=message.ToLower();
-                if (message.Contains("happy"))
+                if (message.ToLower().Contains("happy"))
                 {
                     return "happy";
                 }
-                else
+                else if (message.Equals(string.Empty))
                 {
+
+                    throw new MoodAnalysisException(MoodAnalysisException.ExceptionType.EMPTY_TYPE_EXCEPTION, "message can't be Empty");
+
+                }
+
+                else
+                { 
                     return "sad";
                 }
             }
-
             //catch block will catch the exception 
-            catch(NullReferenceException e)
+            catch (NullReferenceException ex)
             {
-                //print the default exception message
-                Console.WriteLine(e);
-                return "happy";
+                Console.WriteLine("Default exception : " +ex.Message);
+                throw new MoodAnalysisException(MoodAnalysisException.ExceptionType.NULL_TYPE_EXCEPTION, "message can't be Null");
+
             }
+            
         }
     }
 }

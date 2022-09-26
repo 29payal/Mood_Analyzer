@@ -36,7 +36,7 @@ namespace UnitTest1
             AnalyzeMood analyzeMood = new AnalyzeMood(message);
             var actual = analyzeMood.Mood();
             //Assert
-            Assert.AreEqual(expected,actual);
+            Assert.AreEqual(expected, actual);
             Console.WriteLine(actual);
         }
 
@@ -45,16 +45,60 @@ namespace UnitTest1
         {
             //UC2
             //TC2.1 - given null mood then return happy message
-        
-            //Arrange
-            string message = null; 
             string expected = "happy";
-            //Act
-            AnalyzeMood analyzeMood = new AnalyzeMood(message);
-            var actual = analyzeMood.Mood();
-            //Assert
-            Assert.AreEqual(expected, actual);
-            Console.WriteLine(actual);
+            try
+            {
+                string message = "null";
+                AnalyzeMood analyzeMood = new AnalyzeMood(message);
+                var actual = analyzeMood.Mood();
+            }
+            catch(MoodAnalysisException e)
+            {
+                Console.WriteLine("result : " +e);
+                Assert.AreEqual(expected, e.Message);
+               
+            }
+
+        }
+        [TestMethod]
+        public void GivenNullMoodShouldShowCustomException()
+        {
+            //UC3
+            //TC3.1 - given  null mood should throw Mood Analysis exception
+            
+            string expected = "message can't be Null";
+            try
+            {
+                string message = null;
+                AnalyzeMood analysisMood = new AnalyzeMood(message);
+                var actual = analysisMood.Mood();
+            }
+            //catching exception checking result matches
+            catch (MoodAnalysisException ex)
+            {
+                //Assert
+                Console.WriteLine("Custom exception : " +ex);
+                Assert.AreEqual(expected, ex.Message);
+            }
+        }
+        [TestMethod]
+        public void GivenEmptyMoodShouldThrowCustomExceptionIndicatingEmptyMood()
+        {
+            //TC3.2- given empty mood should throw mood analysis exception
+         
+            string expected = "message can't be Empty";
+            try
+            {
+                string message = " ";
+                AnalyzeMood analyzeMood = new AnalyzeMood(message); 
+                string actual = analyzeMood.Mood();
+            }
+            catch (MoodAnalysisException ex)
+            {
+                Console.WriteLine("Custom Exception : " +ex);
+                Assert.AreEqual(expected, ex.Message);
+            }
+
         }
     }
 }
