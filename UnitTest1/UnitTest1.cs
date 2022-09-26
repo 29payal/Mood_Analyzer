@@ -45,16 +45,19 @@ namespace UnitTest1
         {
             //UC2
             //TC2.1 - given null mood then return happy message
-        
-            //Arrange
-            string message = null; 
+            
             string expected = "happy";
-            //Act
+            try
+            {
+             string message= "null";
             AnalyzeMood analyzeMood = new AnalyzeMood(message);
             var actual = analyzeMood.Mood();
-            //Assert
-            Assert.AreEqual(expected, actual);
-            Console.WriteLine(actual);
+            }
+            catch(MoodAnalysisException e)
+            {
+                Console.WriteLine("result : " +e);
+               Assert.AreEqual(expected, e.Message);
+            }
         }
     }
 }
